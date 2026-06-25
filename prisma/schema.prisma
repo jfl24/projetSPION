@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  AGENT
+  CHEF
+}
+
+enum Habilitation {
+  CONFIDENTIEL
+  SECRET
+  TRES_SECRET
+}
+
+enum Statut {
+  DISPONIBLE
+  EN_COURS
+  REUSSIE
+  ECHOUEE
+}
+
+model Agent {
+  id   String  @id  @default(uuid())
+  email  String
+  password String
+  cover_name  String
+  role   Role  @default(AGENT)
+  habilitation  Habilitation @default(CONFIDENTIEL)
+  missions   Mission[]
+  createdAt  DateTime  @default(now())
+}
+
+model Mission {
+  titre   String    @unique
+  description   String
+  niveau_confidentialite   Habilitation  @default(CONFIDENTIEL)
+  statut   Statut    @default(DISPONIBLE)
+  recompense   Int
+  createdAt  DateTime  @default(now())
+  agentId     String
+  agent       Agent   @relation(fields:[agentId], references: [id])
+}
