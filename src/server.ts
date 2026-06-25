@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import routerSpion from "./routes/spion.routes.js";
-// import routerAuth from "./routes/auth.routes.js";
+import routerAuth from "./routes/auth.routes.js";
 
 dotenv.config();
 
@@ -11,6 +11,7 @@ app.use(express.json());
 
 // app.use("/auth", routerAuth);
 app.use("/spion", routerSpion);
+app.use("/auth", routerAuth);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

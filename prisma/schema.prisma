@@ -32,7 +32,7 @@ enum Statut {
 
 model Agent {
   id   String  @id  @default(uuid())
-  email  String
+  email  String  @unique
   password String
   cover_name  String
   role   Role  @default(AGENT)

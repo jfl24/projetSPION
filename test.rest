@@ -3,3 +3,14 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/spion/organicpeacock172
+
+###
+PATCH http://localhost:3000/auth/register_chef
+Content-Type: application/json
+
+{
+    "email": "houssam.debondt@example.com",
+    "password": "meatloaf",
+    "id": "629f695e-cd4e-409c-a95e-e376cdaff4bc"
+}
+###
