@@ -37,11 +37,12 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/spion/mission/tresorjaune
+POST http://localhost:3000/spion/mission/tresordore
 Content-Type: application/json
 
+
 {
-    "titre": "Trésor jaune",
+    "titre": "Tresor dore",
     "description": "Trouver la source d'eau dans le désert",
     "niveau_confidentialite": "CONFIDENTIEL",
     "recompense": 30000,
@@ -53,7 +54,7 @@ GET http://localhost:3000/spion/missionliste
 
 
 ### 
-PATCH http://localhost:3000/mission/tresorjaune 
+PATCH http://localhost:3000/spion/mission?titre=Tresor%20dore
 Content-Type: application/json
 
 

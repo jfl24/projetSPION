@@ -197,11 +197,11 @@ routerSpion.delete(
 
 // Une fonction pour modifier une mission, réservée aux CHEF
 routerSpion.patch(
-  "/mission/:titre",
+  "/mission",
   authentifier,
   exigerRole("CHEF"),
   async (req: Request, res: Response) => {
-    const titre = String(req.params.titre);
+    const titre = String(req.query.titre);
 
     try {
       const mission = await prisma.mission.update({
