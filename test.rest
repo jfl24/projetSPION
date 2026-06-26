@@ -2,15 +2,61 @@ POST http://localhost:3000/spion/engager
 Content-Type: application/json
 
 ###
-GET http://localhost:3000/spion/organicpeacock172
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "jeppe.storm@example.com",
+    "password": "dixie1",
+    "cover_name": "purplekoala764",
+    "id": "6c184e47-2c50-4784-a4a7-b03d45a1e96d"
+}
+
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "laetitia.rousseau@example.com",
+    "password": "invest"
+}
+
+###
+GET http://localhost:3000/spion/espions/organicpeacock172
+
 
 ###
 PATCH http://localhost:3000/auth/register_chef
 Content-Type: application/json
 
 {
-    "email": "houssam.debondt@example.com",
-    "password": "meatloaf",
-    "id": "629f695e-cd4e-409c-a95e-e376cdaff4bc"
+    "email": "laetitia.rousseau@example.com",
+    "password": "invest",
+    "id": "8e064c50-5f1c-48a7-bf73-523228f6af6e"
 }
+
 ###
+POST http://localhost:3000/spion/mission/tresorjaune
+Content-Type: application/json
+
+{
+    "titre": "Trésor jaune",
+    "description": "Trouver la source d'eau dans le désert",
+    "niveau_confidentialite": "CONFIDENTIEL",
+    "recompense": 30000,
+    "agentId": "16fd5724-c099-492d-a1ec-5bc9f5b668f7"
+}
+
+###
+GET http://localhost:3000/spion/missionliste
+
+
+### 
+PATCH http://localhost:3000/mission/tresorjaune 
+Content-Type: application/json
+
+
+{
+    "recompense": 60000
+}

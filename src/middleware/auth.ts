@@ -26,7 +26,9 @@ export function authentifier(req: Request, res: Response, next: NextFunction) {
 export function exigerRole(role: String) {
   return (req: Request, res: Response, next: NextFunction) => {
     if ((req as any).user.role !== role) {
-      return res.status(403).json({ erreur: "acces refuse" });
+      return res
+        .status(403)
+        .json({ erreur: "Je sais qui tu es mais tu n'as pas le droit." });
     }
     next();
   };
