@@ -1,11 +1,15 @@
 # Projet SPION
 
-Projet backend 
+Projet backend avec Node.js, Express.js, JWT et bcrypt pour la gestion d'espions en faisant appel à une API externe et à l'authentification avec JWT.
 
 ## 🛠️ Technologies
-- Java 21 / JavaFX
-- Maven
+- Node.js
+- Express.js
+- JWT
+- REST API
+- bcrypt
+- TypeScript
 
 ## 🚀 Lancement local
 ```bash
-mvn clean javafx:run
+# Cloner le dépôt 
