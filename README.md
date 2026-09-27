@@ -12,4 +12,16 @@ Projet backend avec Node.js, Express.js, JWT et bcrypt pour la gestion d'espions
 
 ## 🚀 Lancement local
 ```bash
-# Cloner le dépôt 
+# Cloner le dépôt
+git clone https://github.com/jfl24/projetSPION.git
+cd projetSPION
+
+# Installer les dépendances
+npm install
+
+# Générer le client Prisma
+npx prisma generate
+
+# Lancer le serveur de développement
+npm run dev
+```
